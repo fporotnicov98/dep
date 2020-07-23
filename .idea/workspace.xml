@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="301c9162-c639-4a82-a789-00164e0ed991" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/API/API.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/korpus.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/korpus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/slider/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/slider/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/slider/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/slider/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/slider/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/asets/image/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Auth/Login/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Auth/Login/Login.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/Forum.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/Forum.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/ForumContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/ForumItem/ForumItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/ForumItem/ForumItem.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/ForumItem/ForumItemContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/NewForum/NewForum.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Forum/NewForum/NewForum.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Header/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Header/Header.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Header/HeaderNews.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Header/HeaderNews.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Imformation/Information.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Imformation/Information.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Imformation/InformationContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/News/NewPost/NewPost.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/News/NewPost/NewPost.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/News/News.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/News/News.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/News/NewsContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Personal/PersonalAccount.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Personal/PersonalAccount.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Personal/PersonalAccountContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Slider/Carousel.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Slider/Slider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Slider/Slider.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Survey/NewSurvey/NewSurvey.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Survey/NewSurvey/NewSurvey.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Survey/Survey.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Survey/Survey.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/Survey/SurveyContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commons/date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commons/newsRemoveModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commons/removeForumMessageModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commons/removeForumModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commons/removeUserModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/confirmForms/errorConfirm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/confirmForms/successConfirm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/normalize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/authReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/forumReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/newsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/personalReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/surveyReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1f5Vb4Tb1JkvvGtFQ0U19lKwNjy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\porot\Documents\Learn\ReactJS\dep\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="301c9162-c639-4a82-a789-00164e0ed991" name="Default Changelist" comment="" />
+      <created>1595508008110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595508008110</updated>
+      <workItem from="1595508010125" duration="1055000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
