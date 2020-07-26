@@ -1,16 +1,17 @@
-import {authAPI} from '../API/API'
+import { authAPI } from '../API/API'
 import { reset } from 'redux-form'
-import {authError, regError, codeError} from '../component/confirmForms/errorConfirm'
-import {authSuccess,regSuccess} from '../component/confirmForms/successConfirm'
+import { authError, regError, codeError } from '../component/confirmForms/errorConfirm'
+import { authSuccess, regSuccess } from '../component/confirmForms/successConfirm'
 
 let initial = {
     email: null,
     isAuth: null,
     fio: null,
-    userId:null,
+    userId: null,
     roleUser: null,
     onReg: false,
-    isVerified: false,
+    onAuth: false,
+
 }
 const authReducer = (state = initial, action) => {
     switch (action.type) {
@@ -20,30 +21,31 @@ const authReducer = (state = initial, action) => {
                 ...action.payload
             }
         case "SET_ON_REG":
-            return{
+            return {
                 ...state,
                 onReg: action.payload
             }
-        case "SET_VERIFIED":
-            return{
+        case "SET_ON_AUTH":
+            return {
                 ...state,
-                isVerified: action.payload
+                onAuth: action.payload
             }
         default:
             return state;
     }
 }
 
-export const setAuthData = (email, fio, userId ,roleUser, isAuth) => ({ type: "SET_AUTH_DATA", payload: { email, fio, userId ,roleUser, isAuth } })
+export const setAuthData = (email, fio, userId, roleUser, isAuth) => ({ type: "SET_AUTH_DATA", payload: { email, fio, userId, roleUser, isAuth } })
 export const setToken = (token) => ({ type: "SET_TOKEN", payload: token })
-export const setOrders= (orders) => ({ type: "SET_ORDERS", payload: orders })
-export const setOnReg = (flag) => ({type: "SET_ON_REG", payload: flag})
-export const setVerified = (flag) => ({type: "SET_VERIFIED", payload: flag})
+export const setOrders = (orders) => ({ type: "SET_ORDERS", payload: orders })
+export const setOnReg = (flag) => ({ type: "SET_ON_REG", payload: flag })
+export const setOnAuth = (flag) => ({ type: "SET_ON_AUTH", payload: flag })
+export const setVerified = (flag) => ({ type: "SET_VERIFIED", payload: flag })
 
 
 
-export const sendEmail = (email,password,fio) => dispatch => {
-    authAPI.sendEmail(email,password,fio)
+export const sendEmail = (email, password, fio) => dispatch => {
+    authAPI.sendEmail(email, password, fio)
         .then(response => {
             dispatch(reset('registrationForm'));
             dispatch(setOnReg(true))
@@ -65,14 +67,27 @@ export const getCode = (code) => dispatch => {
             dispatch(reset('confirmForm'));
         })
 }
+export const getAuthCode = (code) => dispatch => {
+    authAPI.getAuthCode(code)
+        .then(response => {
+            dispatch(reset('confirmAuthForm'));
+            dispatch(setOnAuth(false))
+        })
+        .catch(err => {
+            codeError()
+            dispatch(reset('confirmAuthForm'));
+        })
+}
 
 export const setLogin = (email, password) => dispatch => {
     authAPI.login(email, password)
         .then(response => {
-            if(response.data.resultCode === 0){
+            if (response.data.resultCode === 0) {
                 dispatch(getAuth(response.data.token))
                 dispatch(reset('loginForm'));
                 authSuccess()
+            }else if (response.data.resultCode === 2) {
+                dispatch(setOnAuth(true))
             }
         })
         .catch(err => {
@@ -83,10 +98,10 @@ export const setLogin = (email, password) => dispatch => {
 export const getAuth = (token) => (dispatch) => {
     authAPI.getAuth(token)
         .then(response => {
-                dispatch(setAuthData(response.data.email,response.data.fio,response.data.id,response.data.roleUser,true))
+            dispatch(setAuthData(response.data.email, response.data.fio, response.data.id, response.data.roleUser, true))
         })
 }
 export const logout = () => dispatch => {
-    dispatch(setAuthData(null,null,null,null,false))
+    dispatch(setAuthData(null, null, null, null, false))
 }
 export default authReducer

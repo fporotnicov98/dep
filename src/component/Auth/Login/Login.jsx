@@ -1,11 +1,10 @@
 import React from 'react';
 import style from './Login.module.scss'
 import logo from './../../../asets/image/logo.png'
-import Recaptcha from 'react-recaptcha'
 import { connect } from 'react-redux'
 import { reduxForm, Field } from 'redux-form';
-import { sendEmail, setLogin, getCode, setOnReg, setVerified } from '../../../redux/authReducer'
-import { varificationError } from "../../confirmForms/errorConfirm";
+import { sendEmail, setLogin, getCode, setOnReg, setOnAuth,getAuthCode} from '../../../redux/authReducer'
+
 
 
 let LoginForm = (props) => {
@@ -27,11 +26,6 @@ let LoginForm = (props) => {
                 required='required'
                 id='password'
             />
-            <Recaptcha
-                sitekey="6LcOhKUZAAAAAF6f6PzthhZur4QFMJJStGKyUeoy"
-                render="explicit"
-                verifyCallback={props.setVerified(true)}
-            />,
             <span className={style['error']}>{props.error}</span>
             <button className={style['login']} type="submit" ><span>Войти</span></button>
         </form>
@@ -100,6 +94,24 @@ let ConfirmForm = (props) => {
 }
 const ConfirmFormRedux = reduxForm({ form: 'confirmForm' })(ConfirmForm)
 
+let ConfirmAuthForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={style['form']}>
+            <span className={style['error']}>{props.error}</span>
+            <label htmlFor="code">Вам на почту был отправлен код подтверждения. Введите его в поле ниже.</label>
+            <Field
+                name='code'
+                component='input'
+                type='text'
+                required='required'
+                id='code'
+            />
+            <button className={style['logup']} type="submit" ><span>Подтвердить</span></button>
+        </form>
+    )
+}
+const ConfirmAuthFormRedux = reduxForm({ form: 'confirmAuthForm' })(ConfirmAuthForm)
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -114,12 +126,13 @@ class Login extends React.Component {
         this.props.sendEmail(formData.email, formData.password, formData.fio);
     }
     onSubmitAuth = (formData) => {
-        this.props.isVerified === true
-            ? this.props.setLogin(formData.email, formData.password)
-            : varificationError()
+        this.props.setLogin(formData.email, formData.password)
     }
     onSubmitConfirm = formData => {
         this.props.getCode(formData.code)
+    }
+    onSubmitAuthConfirm = formData => {
+        this.props.getAuthCode(formData.code)
     }
     render() {
         if (this.props.isOpen === false) return null;
@@ -131,11 +144,25 @@ class Login extends React.Component {
                         ? <div className={this.state.isActive ? style['frame'] + " " + style['frame-long'] : style['frame']}>
                             <button onClick={e => this.close(e)} className={style["close-auth"]}><span>x</span></button>
                             <div className={style['logo']}><img src={logo} alt="" /></div>
-                            <div className={this.state.isActive ? style['signin'] + " " + style['signin-left'] : style['signin']}>
-                                <div className={style['title']}>Вход</div>
-                                <LoginForm onSubmit={this.onSubmitAuth} setVerified = {this.props.setVerified} />
-                                <div className={style['signin-active']}>Еще не зарегистрированы?<button onClick={() => this.toggleAuth()}>Регистрация</button></div>
-                            </div>
+                            {
+                                !this.props.onAuth
+                                    ? <div className={this.state.isActive ? style['signin'] + " " + style['signin-left'] : style['signin']}>
+                                        <div className={style['title']}>Вход</div>
+                                        <LoginForm onSubmit={this.onSubmitAuth} />
+                                        <div className={style['signin-active']}>Еще не зарегистрированы?<button onClick={() => this.toggleAuth()}>Регистрация</button></div>
+                                    </div>
+                                    : <div className={style['frame-short'] + " " + style['frame']}>
+                                        <button onClick={e => {
+                                            this.close(e)
+                                            this.props.setOnAuth(false)
+                                        }} className={style["close-auth"]}><span>x</span></button>
+                                        <div className={style['logo']}><img src={logo} alt="" /></div>
+                                        <div className={style['confirm']}>
+                                            <div className={style['title']}>Подтверждение авторизации</div>
+                                            <ConfirmFormRedux onSubmit={this.onSubmitAuthConfirm} />
+                                        </div>
+                                    </div>
+                            }
                             <div className={this.state.isActive ? style['signup'] + ' ' + style['signup-left'] : style['signup']}>
                                 <div className={style['title']}>Регистрация</div>
                                 <LogupFormRedux onSubmit={this.onSubmitReg} />
@@ -168,8 +195,9 @@ class Login extends React.Component {
 const mapStateToProps = state => {
     return {
         isAuth: state.auth.isAuth,
-        onReg: state.auth.onReg
+        onReg: state.auth.onReg,
+        onAuth: state.auth.onAuth
     }
 }
 
-export default connect(mapStateToProps, { setLogin, sendEmail, getCode, setOnReg, setVerified })(Login);
+export default connect(mapStateToProps, { setLogin, sendEmail, getCode, getAuthCode, setOnReg, setOnAuth })(Login);

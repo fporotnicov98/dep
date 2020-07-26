@@ -13,9 +13,9 @@ const App = () => {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Switch>
-            <Route exact path='/' render={() => <NewsContainer />} />
+            <Route path='/' exact render={() => <NewsContainer />} />
             <Route path='/survey' render={() => <SurveyContainer />} />
-            <Route exact path='/forums' render={() => <ForumContainer />} />
+            <Route path='/forums' exact render={() => <ForumContainer />} />
             <Route path='/forum/:forumId?' render={() => <ForumItemContainer />} />
             <Route path='/info' render={() => <Information />} />
             <Route path='/personal' render={() => <PersonalAccountContainer />} />

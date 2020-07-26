@@ -2,7 +2,7 @@ import * as axios from 'axios'
 
 // const token = "eyJhbGc2iOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJmZWRvcm92MTIzQGdtYWlsLmNvbSIsImV4cCI6MTU5MDYxMDYzMiwiaXNzIjoiRGVtb0FwcCIsImF1ZCI6IkRlbW9BcHBDbGllbnQifQ.1nqDAYj0IcVOsgJ7BA41-4ydhNnnkKoygyDE-6yfjrM"
 const instanse = axios.create({
-    baseURL: 'https://kaf.westeurope.cloudapp.azure.com/',
+    baseURL: 'http://10.252.208.248/DepartmentAPI/',
     withCredentials: true,
 })
 
@@ -58,6 +58,9 @@ export const authAPI = {
     },
     getCode(code){
         return instanse.get(`/Auth/CodeRegistration?code=${code}`)
+    },
+    getAuthCode(code){
+        return instanse.get(`/Auth/ConfirmAuth?code=${code}`)
     },
     login(eMail, password) {
         return instanse.post(`/Auth/Authenticate`, { eMail, password })
